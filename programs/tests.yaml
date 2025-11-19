@@ -1,0 +1,13 @@
+# tests.yaml – проверки из спецификации варианта 30
+
+# CONST (A=8, B=480) -> 0x08 0x3C 0x00 0x00
+- { op: CONST, value: 480 }
+
+# LOAD (A=21, B=91) -> 0x75 0x0B 0x00 0x00
+- { op: LOAD, addr: 91 }
+
+# STORE (A=28) -> 0x1C 0x00 0x00 0x00
+- { op: STORE }
+
+# MAX (A=25, B=6) -> 0xD9 0x00 0x00 0x00
+- { op: MAX, offset: 6 }
