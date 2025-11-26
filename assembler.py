@@ -18,17 +18,7 @@ OPCODES = {
 
 
 def assemble_instruction(ins: dict) -> dict:
-    """
-    Превратить YAML-инструкцию в внутреннее представление + 32-битное слово.
 
-    Возвращает dict:
-      {
-        "op": <строка>,
-        "A":  <int>,
-        "B":  <int | None>,
-        "word": <int 0..2^32-1>
-      }
-    """
     if "op" not in ins:
         raise ValueError(f"Инструкция без поля 'op': {ins}")
     op = ins["op"].upper()
