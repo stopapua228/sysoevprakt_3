@@ -43,7 +43,7 @@ python assembler.py programs/tests.yaml build/tests.bin --test
 * STORE → `1C 00 00 00`
 * MAX 6 → `D9 00 00 00`
 ---
-## 3. Формат входной программы (YAML)
+## 3. Формат 1входной программы (YAML)
 Этап 1 поддерживает только 4 инструкции:
 ```yaml
 - { op: CONST, value: 480 }
