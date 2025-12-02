@@ -1,0 +1,38 @@
+# copy_demo.yaml
+# Этап 3: демонстрация интерпретатора.
+# 1) Инициализируем массив по адресам 100..102: значения 10, 20, 30
+# 2) Копируем его в адреса 200..202
+
+# ---------- 1. Инициализация массива (100..102) ----------
+
+# mem[100] = 10
+- { op: CONST, value: 10 }     # VALUE
+- { op: CONST, value: 100 }    # ADDR
+- { op: STORE }                # mem[100] = 10
+
+# mem[101] = 20
+- { op: CONST, value: 20 }
+- { op: CONST, value: 101 }
+- { op: STORE }
+
+# mem[102] = 30
+- { op: CONST, value: 30 }
+- { op: CONST, value: 102 }
+- { op: STORE }
+
+# ---------- 2. Копирование 100..102 -> 200..202 ----------
+
+# mem[200] = mem[100]
+- { op: LOAD,  addr: 100 }     # stack: [mem[100]]
+- { op: CONST, value: 200 }    # stack: [VALUE, 200]
+- { op: STORE }                # mem[200] = VALUE
+
+# mem[201] = mem[101]
+- { op: LOAD,  addr: 101 }
+- { op: CONST, value: 201 }
+- { op: STORE }
+
+# mem[202] = mem[102]
+- { op: LOAD,  addr: 102 }
+- { op: CONST, value: 202 }
+- { op: STORE }
